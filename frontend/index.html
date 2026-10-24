@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Team Task Manager</h1>
+        <button id="addTaskBtn">+ Add Task</button>
+    </header>
+
+    <section class="filters">
+        <select id="statusFilter">
+            <option value="ALL">All Status</option>
+            <option value="TODO">To Do</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="DONE">Done</option>
+        </select>
+
+        <select id="memberFilter">
+            <option value="ALL">All Members</option>
+        </select>
+    </section>
+
+    <main class="board">
+
+        <section class="column">
+            <h2>To Do</h2>
+            <div id="todoColumn" class="task-list"></div>
+        </section>
+
+        <section class="column">
+            <h2>In Progress</h2>
+            <div id="progressColumn" class="task-list"></div>
+        </section>
+
+        <section class="column">
+            <h2>Done</h2>
+            <div id="doneColumn" class="task-list"></div>
+        </section>
+
+    </main>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+
+            <span id="closeModal" class="close">&times;</span>
+
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Task title"
+                    required
+                >
+
+                <textarea
+                    id="description"
+                    placeholder="Task description"
+                ></textarea>
+
+                <select id="assignee">
+                    <option value="">Unassigned</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="dueDate"
+                >
+
+                <select id="priority">
+                    <option value="LOW">Low</option>
+                    <option value="MEDIUM" selected>Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+
+                <button type="submit">Create Task</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
